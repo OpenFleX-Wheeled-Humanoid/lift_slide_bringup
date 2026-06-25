@@ -4,6 +4,8 @@ English | [中文](./README-CN.md)
 
 ---
 
+![Cover](./image/cover.gif)
+
 Top-level bringup package that launches the complete lift-slide system, including robot_state_publisher, controller_manager, all controllers, and optionally RViz.
 
 ## Features
@@ -26,13 +28,11 @@ Top-level bringup package that launches the complete lift-slide system, includin
 
 ```bash
 # Simulation mode (default)
-\nEnglish | [中文](./README-CN.md)
 
 ---
 ros2 launch lift_slide_bringup lift_slide_bringup.launch.py
 
 # Real hardware
-\nEnglish | [中文](./README-CN.md)
 
 ---
 ros2 launch lift_slide_bringup lift_slide_bringup.launch.py use_fake_hardware:=false can_interface:=can3 node_id:=16

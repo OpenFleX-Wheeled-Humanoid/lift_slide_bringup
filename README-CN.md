@@ -4,6 +4,8 @@
 
 ---
 
+![封面](./image/cover.gif)
+
 升降滑台模组的顶层启动包，启动完整系统，包括 robot_state_publisher、controller_manager、所有控制器，以及可选的 RViz。
 
 ## 功能
@@ -26,13 +28,11 @@
 
 ```bash
 # 仿真模式（默认）
-\n[English](./README.md) | 中文
 
 ---
 ros2 launch lift_slide_bringup lift_slide_bringup.launch.py
 
 # 真实硬件
-\n[English](./README.md) | 中文
 
 ---
 ros2 launch lift_slide_bringup lift_slide_bringup.launch.py use_fake_hardware:=false can_interface:=can3 node_id:=16
