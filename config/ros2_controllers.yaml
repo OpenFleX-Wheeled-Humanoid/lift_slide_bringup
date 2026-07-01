@@ -6,8 +6,8 @@ lift_slide_defaults:
     update_rate: 100
 
     joint_name: lift_joint
-    min_position_m: -0.650
-    max_position_m: 0.300
+    min_position_m: -0.750
+    max_position_m: 0.400
     max_velocity_mps: 0.10
     lower_switch_position_m: 0.000
     home_switch_position_m: 0.650
