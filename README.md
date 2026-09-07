@@ -45,8 +45,8 @@ ros2 launch lift_slide_bringup lift_slide_bringup.launch.py use_fake_hardware:=f
 | `use_fake_hardware` | `true` | Enable simulation mode |
 | `can_interface` | `can3` | SocketCAN interface name |
 | `node_id` | `16` | CANopen node ID |
-| `min_height` | `-0.650` | Minimum travel position (m) |
-| `max_height` | `0.300` | Maximum travel position (m) |
+| `min_height` | `-0.750` | Software minimum position (m) |
+| `max_height` | `0.400` | Software maximum position (m) |
 | `max_velocity_mps` | `0.10` | Maximum velocity (m/s) |
 | `start_rviz` | `true` | Launch RViz with panel |
 | `homing_method` | `27` | CANopen homing method (CiA402 6098h) |

@@ -19,8 +19,8 @@ def _load_lift_defaults():
     defaults = {
         'can_interface': 'can3',
         'node_id': 16,
-        'min_position_m': -0.650,
-        'max_position_m': 0.300,
+        'min_position_m': -0.750,
+        'max_position_m': 0.400,
         'max_velocity_mps': 0.10,
         'lower_switch_position_m': 0.000,
         'home_switch_position_m': 0.650,
@@ -105,6 +105,13 @@ def generate_launch_description():
         'node_id',
         default_value=lift_defaults['node_id'],
         description='CANopen 节点ID'
+    )
+    calibration_file_arg = DeclareLaunchArgument(
+        'calibration_file',
+        default_value=PathJoinSubstitution([
+            FindPackageShare('lift_slide_driver'), 'config', 'lift_slide_calibration.yaml'
+        ]),
+        description='升降台包内的零点校准记录文件'
     )
     use_fake_hardware_arg = DeclareLaunchArgument(
         'use_fake_hardware',
@@ -283,6 +290,8 @@ def generate_launch_description():
                 LaunchConfiguration('can_interface'),
                 ' node_id:=',
                 LaunchConfiguration('node_id'),
+                ' calibration_file:=',
+                LaunchConfiguration('calibration_file'),
                 ' counts_per_meter:=',
                 LaunchConfiguration('counts_per_meter'),
                 ' counts_per_revolution:=',
@@ -468,7 +477,6 @@ def generate_launch_description():
             '--ros-args',
             '-p', ['pos_min:=', LaunchConfiguration('min_height')],
             '-p', ['pos_max:=', LaunchConfiguration('max_height')],
-            '-p', 'position_command_topic:=/lift_position_controller/commands',
         ],
         condition=IfCondition(LaunchConfiguration('start_rviz')),
     )
@@ -484,6 +492,7 @@ def generate_launch_description():
             use_fake_hardware_arg,
             can_interface_arg,
             node_id_arg,
+            calibration_file_arg,
             min_height_arg,
             max_height_arg,
             max_velocity_mps_arg,

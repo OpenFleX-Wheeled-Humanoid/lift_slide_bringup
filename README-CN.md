@@ -45,8 +45,8 @@ ros2 launch lift_slide_bringup lift_slide_bringup.launch.py use_fake_hardware:=f
 | `use_fake_hardware` | `true` | 是否启用仿真模式 |
 | `can_interface` | `can3` | SocketCAN 接口名称 |
 | `node_id` | `16` | CANopen 节点 ID |
-| `min_height` | `-0.650` | 最小行程位置（米） |
-| `max_height` | `0.300` | 最大行程位置（米） |
+| `min_height` | `-0.750` | 软件最小位置（米） |
+| `max_height` | `0.400` | 软件最大位置（米） |
 | `max_velocity_mps` | `0.10` | 最大速度（米/秒） |
 | `start_rviz` | `true` | 是否启动 RViz |
 | `homing_method` | `27` | CANopen 回零方法（CiA402 6098h） |

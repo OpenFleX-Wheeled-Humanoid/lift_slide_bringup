@@ -2,6 +2,7 @@ lift_slide_defaults:
   ros__parameters:
     can_interface: can3
     node_id: 16
+    calibration_file: ""
     default_controller: lift_position_controller
     update_rate: 100
 
@@ -93,8 +94,8 @@ lift_manual_position_controller:
   ros__parameters:
     joints:
       - lift_joint
-    min_position_m: -0.650
-    max_position_m: 0.300
+    min_position_m: -0.750
+    max_position_m: 0.400
     lower_switch_position_m: 0.000
     home_switch_position_m: 0.650
     upper_switch_position_m: 0.950
